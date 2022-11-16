@@ -1,6 +1,6 @@
 <?php
     $current_dir = '/var/www/codecoverage';
-    $test_name = (isset($_COOKIE['7NSxAuhYVeOOzxKYRN5UabUrraXwpIM0Rm9ol66fBwFVyLUb']) && !empty($_COOKIE['7NSxAuhYVeOOzxKYRN5UabUrraXwpIM0Rm9ol66fBwFVyLUb'])) ? $_COOKIE['7NSxAuhYVeOOzxKYRN5UabUrraXwpIM0Rm9ol66fBwFVyLUb'] : 'unknown_test_' . time();
+    $test_name = (isset($_COOKIE['placeholder']) && !empty($_COOKIE['placeholder'])) ? $_COOKIE['placeholder'] : 'unknown_test_' . time();
     xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE);
 
     function end_coverage()
