@@ -7,3 +7,5 @@ Analyze the coverages and generate reports
 ```
 php combine.php REPORT_FOLDER APPNAME
 ```
+Auto prepend the codecoverage.php file to every php file of the web application.
+Enable xdebug and set the mode to coverage.
