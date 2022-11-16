@@ -2,6 +2,7 @@
     include_once("vendor/autoload.php");
     $report_name = $argv[1];
     $appname = $argv[2];
+    $exist = file_exists("cookies/a_$appname.json");
     $rough_data = file_get_contents("cookies/a_$appname.json");
     $cookies = json_decode($rough_data);
     $coverages = glob("coverages/*.json");
