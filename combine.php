@@ -2,7 +2,7 @@
     include_once("vendor/autoload.php");
     $report_name = $argv[1];
     $appname = $argv[2];
-    $exist = file_exists("cookies/a_$appname.json");
+    $exist = file_exists("cookies/a_$appname.json"); #using whether file exist to enable the filtering mode.
     $rough_data = file_get_contents("cookies/a_$appname.json");
     $cookies = json_decode($rough_data);
     $coverages = glob("coverages/*.json");
@@ -19,16 +19,18 @@
     {   
         $i++;
         $flag = false;
-        foreach($cookies as $cookie_value)
-        {
-            $flag = strpos($coverage_file, $cookie_value);
-            if($flag == true){
-                break;
+        if($exist){
+            foreach($cookies as $cookie_value)
+            {
+                $flag = strpos($coverage_file, $cookie_value);
+                if($flag == true){
+                    break;
+                }
             }
-        }
-        if($flag == false){
-            echo "($i/$count) from $coverage_file not belong to admin user, skip". PHP_EOL;
-            continue;
+            if($flag == false){
+                echo "($i/$count) from $coverage_file not belong to admin user, skip". PHP_EOL;
+                continue;
+            }
         }
         echo "Processing coverage ($i/$count) from $coverage_file". PHP_EOL;
         $codecoverageData = json_decode(file_get_contents($coverage_file), JSON_OBJECT_AS_ARRAY);
