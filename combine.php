@@ -3,8 +3,10 @@
     $report_name = $argv[1];
     $appname = $argv[2];
     $exist = file_exists("cookies/a_$appname.json"); #using whether file exist to enable the filtering mode.
-    $rough_data = file_get_contents("cookies/a_$appname.json");
-    $cookies = json_decode($rough_data);
+    if($exist){
+        $rough_data = file_get_contents("cookies/a_$appname.json");
+        $cookies = json_decode($rough_data);
+    }
     $coverages = glob("coverages/*.json");
     #increase the memory in multiples of 128M in case of memory error
     ini_set('memory_limit', '12800M');
