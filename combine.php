@@ -20,7 +20,7 @@
     $count = count($coverages);
     $i = 0;
 
-    $final_coverage->filter()->addDirectoryToWhitelist("/home/vmuser/$appname/");
+    $final_coverage->filter()->addDirectoryToWhitelist("/var/www/$appname/");
     echo "start iterating" . PHP_EOL;
     foreach ($coverages as $coverage_file)
     {   
@@ -40,7 +40,7 @@
             }
         }
         $file_arr = explode("-", $coverage_file);
-        $time_arr = explode(".", $file_arr[2]);
+        $time_arr = explode(".", end($file_arr));
         $time_stamp = $time_arr[0];
         $time_stamp = (int) $time_stamp;
         $related_time = $time_stamp - $start_time;
