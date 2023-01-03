@@ -1,3 +1,4 @@
+chmod -R 777 ../codecoverage
 php composer.phar install
 mkdir coverages
 chmod 777 coverages
