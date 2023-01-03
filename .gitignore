@@ -1,0 +1,6 @@
+report*
+coverages/
+vendor
+package*
+node_modules/
+composer.lock
