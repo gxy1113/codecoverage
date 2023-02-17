@@ -19,7 +19,6 @@
     $final_coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
     $count = count($coverages);
     $i = 0;
-
     $final_coverage->filter()->addDirectoryToWhitelist("/var/www/$appname/");
     echo "start iterating" . PHP_EOL;
     foreach ($coverages as $coverage_file)
