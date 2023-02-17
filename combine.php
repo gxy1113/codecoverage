@@ -19,7 +19,12 @@
     $final_coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
     $count = count($coverages);
     $i = 0;
-    $final_coverage->filter()->addDirectoryToWhitelist("/var/www/$appname/");
+    if($appname == "hotcrp"){
+        $final_coverage->filter()->addDirectoryToWhitelist("/home/vmuser/$appname/");
+    }
+    else{
+        $final_coverage->filter()->addDirectoryToWhitelist("/var/www/$appname/");
+    }
     echo "start iterating" . PHP_EOL;
     foreach ($coverages as $coverage_file)
     {   
@@ -56,7 +61,6 @@
         $test_name = str_ireplace(basename($coverage_file,".json"),"coverage-", "");
         $final_coverage->append($codecoverageData, $test_name);
     }
-
     echo "Generating final report..." . PHP_EOL;
     $report = new \SebastianBergmann\CodeCoverage\Report\Html\Facade;
     $report->process($final_coverage, $report_name);
