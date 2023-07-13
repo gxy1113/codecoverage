@@ -23,7 +23,7 @@
         $final_coverage->filter()->addDirectoryToWhitelist("/home/vmuser/$appname/");
     }
     else{
-        $final_coverage->filter()->addDirectoryToWhitelist("/var/www/$appname/");
+        $final_coverage->filter()->addDirectoryToWhitelist("/var/www/html/");
     }
     echo "start iterating" . PHP_EOL;
     foreach ($coverages as $coverage_file)
