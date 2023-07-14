@@ -10,6 +10,8 @@ while getopts "a:t:" option; do
    esac
 done
 sleep 10
+echo $APPNAME
+echo $START_TIME
 for i in `seq 1 24`;
 do
     echo "take snapshot of coverages-$i"
