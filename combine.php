@@ -20,7 +20,7 @@
     $count = count($coverages);
     $i = 0;
     if($appname == "hotcrp"){
-        $final_coverage->filter()->addDirectoryToWhitelist("/home/vmuser/$appname/");
+        $final_coverage->filter()->addDirectoryToWhitelist("/home/$appname/");
     }
     else{
         $final_coverage->filter()->addDirectoryToWhitelist("/var/www/html/");
