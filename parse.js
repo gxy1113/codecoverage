@@ -64,6 +64,7 @@ for(let i = 0; i < text_array.length; i++){
     if(text_array[i] == "Total"){
         //console.log(text_array[i + 3]);
         let value = text_array[i + 3].split("/")[0];
+        //let value = text_array[i + 3];
         appendtoFile(value);
     }
 }
